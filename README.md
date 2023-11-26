@@ -23,17 +23,21 @@ This project is a chatbot application built using OpenAI for natural language pr
 
    ```bash
    git clone https://github.com/jatin-vashisht/GoodSpace-ChatBot.git
+   ```
 
 2. Install Server dependencies:
     
     ```bash
+    cd server/
     npm install
+    ```
     
 3. Install Application dependencies:
     
     ```bash
     cd client/
     npm install
+    ```
     
 4. Set up environment variables:
 
@@ -43,11 +47,13 @@ This project is a chatbot application built using OpenAI for natural language pr
     
     ```bash
     npm run dev
+    ```
     
 6. Start Application 
     
     ```bash
     npm start
+    ```
     
 ## Usage
 
