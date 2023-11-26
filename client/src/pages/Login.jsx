@@ -24,7 +24,7 @@ const Login = () => {
     e.preventDefault();
     try {
       dispatch(signInStart());
-      const res = await axios.post("/user/login", formData);
+      const res = await axios.post("https://goodspace-ai-chatbot.onrender.com/user/login", formData);
       const data = await res.data;
       if (data.success === false) {
         dispatch(signInFailure(data.message));

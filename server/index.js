@@ -31,19 +31,19 @@ server.listen(process.env.PORT, () => {
   console.log(`Server is listening on port: ${process.env.PORT} 🤘🏻`);
 });
 
-const __dirname = path.resolve();
+// const __dirname = path.resolve();
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, "/client/build")))
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static(path.join(__dirname, "/client/build")))
   
-  app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname,"client","build","index.html"))
-  })
-} else {
+//   app.get('/', (req, res) => {
+//     res.sendFile(path.resolve(__dirname,"client","build","index.html"))
+//   })
+// } else {
   app.get('/', (req, res) => {
     res.status(200).json({ message: 'Hello from server 😊' });
   });
-}
+// }
 
 dbConnect().then(() => {
   console.log('successfully connected to MongoDB database 👍🏻');

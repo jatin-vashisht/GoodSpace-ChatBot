@@ -13,7 +13,7 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { FaAngleLeft } from 'react-icons/fa';
 
-const socket = io.connect('http://localhost:8000');
+const socket = io.connect('https://goodspace-ai-chatbot.onrender.com/');
 
 const Chat = () => {
   const [userPrompt, setUserPrompt] = useState('');
@@ -38,7 +38,7 @@ const Chat = () => {
       setChatMessages((prev) => [...prev, newMessage]);
       setSideChats((prev) => [...prev, newMessage]);
       socket.emit('send_message', { message: newMessage, user });
-      const response = await axios.post('/chat/new', {
+      const response = await axios.post('https://goodspace-ai-chatbot.onrender.com/chat/new', {
         userPrompt,
       });
       const getMessage = { role: 'assistant', content: response.data };
@@ -58,7 +58,7 @@ const Chat = () => {
       try {
         const user = localStorage.getItem('current_user');
         const response = await axios.get(
-          `http://localhost:8000/chat/get-all-chats/${user}`
+          `https://goodspace-ai-chatbot.onrender.com/chat/get-all-chats/${user}`
         );
         const data = await response.data;
         data.chats.map((chat) => {
@@ -77,7 +77,7 @@ const Chat = () => {
   const handleSignOut = async () => {
     try {
       dispatch(signOutUserStart());
-      const res = await axios.post('/user/logout');
+      const res = await axios.post('https://goodspace-ai-chatbot.onrender.com/user/logout');
       const data = await res.data;
       if (data.success === false) {
         dispatch(signOutUserFailure(data.message));
