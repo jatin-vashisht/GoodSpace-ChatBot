@@ -138,7 +138,7 @@ const Register = () => {
         setValidData(true);
         setLoading(true);
 
-        const res = await axios.post("https://goodspace-ai-chatbot.onrender.com//user/register", formData);
+        const res = await axios.post("https://goodspace-ai-chatbot.onrender.com/user/register", formData);
 
         const data = await res.data;
         if (res.status === 500 || !data) {
