@@ -38,7 +38,7 @@ const Chat = () => {
       setChatMessages((prev) => [...prev, newMessage]);
       setSideChats((prev) => [...prev, newMessage]);
       socket.emit('send_message', { message: newMessage, user });
-      const response = await axios.post('/chat/new', {
+      const response = await axios.post('https://goodspace-ai-chatbot.onrender.com/chat/new', {
         userPrompt,
       });
       const getMessage = { role: 'assistant', content: response.data };
@@ -77,7 +77,7 @@ const Chat = () => {
   const handleSignOut = async () => {
     try {
       dispatch(signOutUserStart());
-      const res = await axios.post('/user/logout');
+      const res = await axios.post('https://goodspace-ai-chatbot.onrender.com/user/logout');
       const data = await res.data;
       if (data.success === false) {
         dispatch(signOutUserFailure(data.message));

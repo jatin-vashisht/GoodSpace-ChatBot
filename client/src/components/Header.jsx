@@ -17,7 +17,7 @@ const Header = () => {
   const handleSignOut = async () => {
     try {
       dispatch(signOutUserStart());
-      const res = await axios.post("/user/logout");
+      const res = await axios.post("https://goodspace-ai-chatbot.onrender.com/user/logout");
       const data = await res.data;
       if (data.success === false) {
         dispatch(signOutUserFailure(data.message));
