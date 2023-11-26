@@ -10,6 +10,7 @@ This project is a chatbot application built using OpenAI for natural language pr
 
 
 ## Previews:
+https://github.com/jatin-vashisht/GoodSpace-ChatBot/assets/84888954/0a2bd816-867d-4997-9bd6-32a09229db71
 
 ![](https://firebasestorage.googleapis.com/v0/b/disney-plus-hotstar-clon-13914.appspot.com/o/images%2Fhomepage.png?alt=media&token=13943317-cd60-416d-8389-e8e98340fe60)
 ![](https://firebasestorage.googleapis.com/v0/b/disney-plus-hotstar-clon-13914.appspot.com/o/images%2Flogin.png?alt=media&token=3a02d0d3-f09d-48fa-9cc2-e03f171b5c1b)
